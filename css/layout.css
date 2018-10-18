@@ -355,9 +355,17 @@ ul#nav li.current a { color: #F06000; }
 #work h1 span {
    border-bottom: 3px solid #11ABB0;
    padding-bottom: 6px;
+   
 }
 #work h3 {
    font: 25px/30px 'opensans-bold', sans-serif;
+
+}
+#work h4 {
+  font: 30px/35px 'opensans-bold', sans-serif;
+  text-align: center;
+  padding-top: 5px;
+
 }
 
 #work .header-col { padding-top: 9px; }
@@ -384,7 +392,15 @@ ul#nav li.current a { color: #F06000; }
 }
 
 /*end work----------------------------------------------*/
+#year{
+  text-align: center;
+  padding-bottom: 30px;
+color:blue;
+}
+#spacing{
+  line-height: 80%;
 
+}
 
 /* project section ---------------------------   */
 
@@ -526,7 +542,9 @@ ul#nav li.current a { color: #F06000; }
    line-height: 42px;
    border-radius: 3px 0 0 3px;
 }
-
+#orig{
+  list-style-type: disc;
+}
 
 /* ------------------------------------------------------------------ */
 /* e. Portfolio Section
