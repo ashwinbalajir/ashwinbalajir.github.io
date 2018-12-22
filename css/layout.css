@@ -240,6 +240,17 @@ ul#nav li.current a { color: #F06000; }
   margin:10px;
   float:none;
 }
+
+.address1{
+   text-align:center;
+}
+
+#contactclass {
+   /* margin-left: auto;
+   margin-right: auto; */
+   width: 50em;
+   text-align:center
+}
 /* skills section ---------------------------   */
 
 #skills {
