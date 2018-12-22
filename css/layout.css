@@ -206,10 +206,10 @@ ul#nav li.current a { color: #F06000; }
    color: #7A7A7A;
 }
 #about .profile-pic {
+   position: relative;
    width: 200px;
    height: 200px;
    border-radius: 100%;
-   float:right;
 }
 #about .contact-details { }
 #about .download {
@@ -236,20 +236,15 @@ ul#nav li.current a { color: #F06000; }
 
 }
 
+@media only screen and (max-width: 767px) {
+
+   .threecol{ width:100%}
+
+}
+
 .address{
   margin:10px;
   float:none;
-}
-
-.address1{
-   text-align:center;
-}
-
-#contactclass {
-   /* margin-left: auto;
-   margin-right: auto; */
-   width: 50em;
-   text-align:center
 }
 /* skills section ---------------------------   */
 
