@@ -1,2 +1,2 @@
 Link to my Resume. 
-URL : ashwinbalaji13.github.io
+URL : ashwinbalajir.github.io
