@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js"></script>
+
+  </head>
+  <body>
+    <div id="chat-window">
+      <div class="chat-header-container">
+        <div class="chat-header">
+          <div class="chat-title">Chat Bot</div>
+          <div class="header-elements" onclick="openChatWindow()">
+            <img src="assets/close_icon.svg" />
+          </div>
+        </div>
+      </div>
+      <div class="chat-conv">
+        <div class="msg-inbox">
+          <div class="chats">
+            <!-- <div class="received-message">
+              <div class="received-text">
+                <strong>Bot</strong><br />
+                Hello how can i help you today?
+              </div>
+              <div class="message-info">Bot at 1.20 p.m</div>
+            </div> -->
+           
+          </div>
+        </div>
+      </div>
+      <div class="text-box">
+        <!-- <input type="text" style="height:80%"> -->
+        <input
+          type="text"
+          id="user-input"
+          class="Input-text"
+          placeholder=" Enter text here"
+        />
+        <img
+          src="assets/forward.svg"
+          class="send-button"
+          onclick="userAction()"
+        />
+      </div>
+    </div>
+    <div id="chat_icon" onclick="openChatWindow()"></div>
+
+  </body>
+</html>
