@@ -1,42 +1,64 @@
-const dialogflow = require("dialogflow");
-
+const dialogflow = require('dialogflow');
+const uuid = require('uuid/v1');
+const { projects, credentials } = require('./utils/service-credentials/credentials');
 
 // let privateKey = (process.env.NODE_ENV == "production") ? JSON.parse(process.env.DIALOGFLOW_PRIVATE_KEY) : process.env.DIALOGFLOW_PRIVATE_KEY
 // let clientEmail = process.env.DIALOGFLOW_CLIENT_EMAIL
 
+async function sendTextMessageToDialogFlow(body, res) {
+	// Define session path
+	let { sessionID, projectID } = body;
+	let config = {
+		credentials: {}
+	};
+	sessionID = sessionID || uuid();
+	projectID = projects[projectID];
+	if (!projectID || !credentials[projectID]) {
+		res.status(400).send('project ID not found');
+	}
+	config.credentials = credentials[projectID];
+	const sessionClient = new dialogflow.SessionsClient(config);
+	const sessionPath = sessionClient.sessionPath(projectID, sessionID);
 
+	let request = processRequest(sessionPath, body, res);
 
-async function sendTextMessageToDialogFlow(textMessage, sessionId,config) {
-  // Define session path
-  let sessionClient = new dialogflow.SessionsClient(config);
-
-  console.log("in", config.credentials.projectId, sessionId);
-
-  const sessionPath = sessionClient.sessionPath(config.credentials.projectId, sessionId);
-  console.log("TCL: sendTextMessageToDialogFlow -> sessionPath", sessionPath);
-  // The text query request.
-  const request = {
-    session: sessionPath,
-    queryInput: {
-      text: {
-        text: textMessage,
-        languageCode: "en"
-      }
-    }
-  };
-  console.log("TCL: sendTextMessageToDialogFlow -> request", request);
-  try {
-    return await sessionClient.detectIntent(request);
-
-    // let responses = await this.sessionClient.detectIntent(request)
-    // console.log('DialogFlow.sendTextMessageToDialogFlow: Detected intent', responses);
-    // return responses
-  } catch (err) {
-    console.error("DialogFlow.sendTextMessageToDialogFlow ERROR:", err);
-    throw err;
-  }
+	try {
+		return await sessionClient.detectIntent(request);
+	} catch (err) {
+		console.error('DialogFlow.sendTextMessageToDialogFlow ERROR:', err);
+		res.status(400).send('something went wrong');
+		throw err;
+	}
+}
+function processRequest(sessionPath, body, res) {
+	let { query, event } = body;
+	if (!(query || (event && event.name))) {
+		res.status(400).send('query or event name not found');
+	}
+	let request = {
+		session: sessionPath,
+		queryInput: {
+			text: {
+				text: query,
+				languageCode: 'en'
+			}
+		}
+	};
+	if (event) {
+		request.queryInput.event = {
+			name: event.name,
+			parameters: event.parameters || {},
+			languageCode: 'en'
+		};
+	} else {
+		request.queryInput.text = {
+			text: query,
+			languageCode: 'en'
+		};
+	}
+	return request;
 }
 
 module.exports = {
-  sendTextMessageToDialogFlow
+	sendTextMessageToDialogFlow
 };
