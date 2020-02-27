@@ -1,18 +1,18 @@
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 1050px) {
 	/* For mobile phones: */
 	#chat-window {
-		width: 80% !important;
-		height: 80% !important;
+		width: 50% !important;
+		height: 60% !important;
 	}
 }
-
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 800px) {
 	/* For mobile phones: */
 	#chat-window {
 		width: 80% !important;
 		height: 60% !important;
 	}
 }
+
 /* @media only screen and (max-width: 1050px) { */
 /* For mobile phones: */
 /* #chat-window {
@@ -27,20 +27,21 @@
 	/* background-image: "../assets/chat.svg"; */
 	background-image: url("../assets/chat.svg");
 	background-repeat: no-repeat;
-	width: 70px;
-	height: 70px;
+	width: 4.1rem;
+	height: 4.1rem;
 	position: fixed;
-	bottom: 5px;
-	right: 10px;
+	bottom: .7rem;
+	right: 1rem;
 }
 #chat-window {
 	position: fixed;
-	right: 40px;
-	border: 1px solid black;
-	width: 25rem;
-	height: 26rem;
-	bottom: 5%;
+	right: 1rem;
+	/* border: 1px 0 1px solid black; */
+	width: 23rem;
+	height: 23rem;
+	bottom: 3rem;
 	box-sizing: border-box;
+	position: absolute;
 	/* transition: all 0.5s ease-in-out;
 	transform: scale(0.8); */
 }
@@ -48,23 +49,44 @@
 .chat-header-container {
 	height: 10%;
 	background-color: goldenrod;
-	border-bottom: 1px solid black;
-
+	border: 1px solid rgba(0, 0, 0, 0.349);
+	border-radius: .8rem .8rem 0 0;
 	/* background: url("../assets/close_icon.svg") right no-repeat; */
+	position: relative;
 
 	/* background-repeat: no-repeat; */
 }
+
+.chat-header {
+	/* margin: justify; */
+	height: 80%;
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	display: relative;
+}
 .chat-title {
-	padding-left: 12px;
-	padding-top: 12px;
-	float: left;
+	/* padding-left: 12px;
+	padding-top: 12px; */
+	/* float: left;
+	text-align: center;
+	padding-left: .5rem;
+	margin: auto;
+	padding-bottom: 10%; */
+	display: flex;
 	font-size: 20px;
+	padding-left: 2%;
+	flex-direction: row;
+	align-items: centre;
 }
 .header-elements {
-	margin-top: 12px;
-	margin-right: 10px;
+	/* margin-top: 12px;
+	margin-right: 10px; */
 	width: 20px;
 	height: 20px;
+	display: flex;
+
 	float: right;
 }
 .chat-conv {

@@ -73,7 +73,7 @@ const userAction = async () => {
 				'Content-Type': 'application/json'
 			},
 
-			body: JSON.stringify({ query: user_message, sessionID: '1234', projectID:"smalltalk" })
+			body: JSON.stringify({ query: user_message, sessionID: '1234', projectID: 'smalltalk' })
 		});
 		let res = await response.json(); //extract JSON from the http response
 		var reply = res.response[0].queryResult.fulfillmentText;
