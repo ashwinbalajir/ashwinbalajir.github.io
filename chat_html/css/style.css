@@ -1,3 +1,28 @@
+@media only screen and (max-width: 500px) {
+	/* For mobile phones: */
+	#chat-window {
+		width: 80% !important;
+		height: 80% !important;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	/* For mobile phones: */
+	#chat-window {
+		width: 80% !important;
+		height: 60% !important;
+	}
+}
+/* @media only screen and (max-width: 1050px) { */
+/* For mobile phones: */
+/* #chat-window {
+		max-width: 100%;
+		max-height: 90%;
+	}
+} */
+/* .chat-popup {
+	display: inline;
+} */
 #chat_icon {
 	/* background-image: "../assets/chat.svg"; */
 	background-image: url("../assets/chat.svg");
@@ -12,10 +37,12 @@
 	position: fixed;
 	right: 40px;
 	border: 1px solid black;
-	width: 400px;
-	height: 450px;
+	width: 25rem;
+	height: 26rem;
 	bottom: 5%;
 	box-sizing: border-box;
+	/* transition: all 0.5s ease-in-out;
+	transform: scale(0.8); */
 }
 
 .chat-header-container {
@@ -49,7 +76,7 @@
 
 .text-box {
 	height: 10%;
-	background: indianred;
+	background: goldenrod;
 }
 
 .Input-text {
@@ -67,12 +94,12 @@
 	height: 100%;
 	padding: 0 10px;
 	/* background: indianred; */
-	background: rgba(14, 14, 17, 0.486);
+	background: rgba(218, 165, 32, 0.521);
 	float: left;
 }
 
 .Input-text::placeholder {
-	color: #b0bec5;
+	color: #151e22;
 }
 
 .send-button {
@@ -151,3 +178,50 @@
 	float: right;
 	margin-right: 6px;
 }
+/* 
+.chat-popup {
+	-webkit-font-smoothing: antialiased;
+	-webkit-transition: all .2s ease-out;
+	-webkit-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+	opacity: 1;
+	-webkit-animation: zoomIn .2s cubic-bezier(.42, 0, .58, 1);
+	animation: zoomIn .2s cubic-bezier(.42, 0, .58, 1);
+	display: inline;
+}
+
+@-webkit-keyframes zoomIn {
+	0% {
+		-webkit-transform: scale(0);
+		transform: scale(0);
+		opacity: 0.0;
+	}
+	100% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+@keyframes zoomIn {
+	0% {
+		-webkit-transform: scale(0);
+		transform: scale(0);
+		opacity: 0.0;
+	}
+	100% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+		opacity: 1;
+	}
+} */
+
+/* .popup-open {
+	-webkit-font-smoothing: antialiased;
+	-webkit-transition: all .2s ease-out;
+	-webkit-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+	opacity: 1;
+	-webkit-animation: zoomIn .2s cubic-bezier(.42, 0, .58, 1);
+	animation: zoomIn .2s cubic-bezier(.42, 0, .58, 1);
+} */
